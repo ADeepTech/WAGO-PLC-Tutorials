@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.com/ADeepTech/WAGO-PLC-Tutorials.svg?branch=master)](https://travis-ci.com/ADeepTech/WAGO-PLC-Tutorials)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/be6f4a2167b448cba1cc8850eb03748f)](https://www.codacy.com/manual/ADeepTech/WAGO-PLC-Tutorials?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ADeepTech/WAGO-PLC-Tutorials&amp;utm_campaign=Badge_Grade)
+[![codecov](https://codecov.io/gh/ADeepTech/WAGO-PLC-Tutorials/branch/master/graph/badge.svg)](https://codecov.io/gh/ADeepTech/WAGO-PLC-Tutorials)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/adeeptech)
 
 <p align="center">
