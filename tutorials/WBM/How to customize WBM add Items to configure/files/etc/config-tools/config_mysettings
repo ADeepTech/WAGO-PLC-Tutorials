@@ -1,0 +1,85 @@
+#!/bin/bash
+#-----------------------------------------------------------------------------#
+# Script-name: config_mysettings
+#
+# Changing "/etc/mysettings.conf" 
+#
+# Author: SG
+#-----------------------------------------------------------------------------#
+
+# load general definitions and functions
+if [ ! -f "/etc/config-tools/config_tool_lib" ]; then
+  echo "config_tool_lib missing"
+  exit 255
+fi
+
+. /etc/config-tools/config_tool_lib
+
+CONF_FILE="/etc/mysettings.conf"
+
+#-------------- main-programm ------------------------#
+
+status=$SUCCESS
+
+#--------------------------------------------------------------------
+# help text (requested with specified parameter)
+#--------------------------------------------------------------------
+if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
+  echo
+  echo "* Change the My Settings configuration *"
+  echo
+  echo "Usage: config_mysettings < parameter-name=parameter-value > [ parameter-name=parameter-value ] ..."
+  echo
+  echo "parameter-name: publish | topic | interval "
+  echo
+  exit $status
+fi
+
+# check whether config-file exists or can not be read
+if [ ! -f $CONF_FILE ] ; then
+  ReportError $CONFIG_FILE_MISSING "($CONF_FILE)"
+  exit $CONFIG_FILE_MISSING
+fi
+
+#--------------------------------------------------------------------
+# Update config file /etc/mysettings.conf
+#--------------------------------------------------------------------
+PUBLISH=`GetParameterValue publish $*`
+TOPIC=`GetParameterValue topic $*`
+INTERVAL=`GetParameterValue interval $*`
+if [ "$status" = "$SUCCESS" ]; then
+	
+	# update "publish"
+	sed -i "/^publish/cpublish=$PUBLISH" $CONF_FILE
+	status=$?
+	if [ "$status" != "$SUCCESS" ]; then
+		status=$SHELL_ERROR
+		ReportError $status
+		SetLastError "Error while writing mysettings config file"
+	fi
+	
+	# update "topic"
+	sed -i "/^topic/ctopic=$TOPIC" $CONF_FILE
+	status=$?
+	if [ "$status" != "$SUCCESS" ]; then
+		status=$SHELL_ERROR
+		ReportError $status
+		SetLastError "Error while writing mysettings config file"
+	fi
+	
+	# update "interval"
+	sed -i "/^interval/cinterval=$INTERVAL" $CONF_FILE
+	status=$?
+	if [ "$status" != "$SUCCESS" ]; then
+		status=$SHELL_ERROR
+		ReportError $status
+		SetLastError "Error while writing mysettings config file"
+	fi
+	
+fi
+
+# write buffered file system blocks to disk
+sync
+wait 1
+
+exit $status

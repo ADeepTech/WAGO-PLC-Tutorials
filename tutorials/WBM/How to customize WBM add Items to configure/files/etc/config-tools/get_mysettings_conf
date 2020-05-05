@@ -1,0 +1,41 @@
+#!/bin/bash
+#-----------------------------------------------------------------------------#
+# Script-name: get_mysettings_conf
+#
+# Get mysettings configuration of the PLC.
+#
+# Author: SG
+#-----------------------------------------------------------------------------#
+
+
+# show help-text if requested
+if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
+  echo
+  echo "* Get configuration of the mysettings *"
+  echo
+  echo "Usage: get_mysettings_conf "
+  echo 
+  exit 0
+fi
+
+# validate request params
+case $1 in
+    publish)
+        ;;
+    topic)
+        ;;
+    interval)
+        ;;
+    *)
+        #SetLastError "Illegal argument $1"
+        #exit $INVALID_PARAMETER
+		exit -1
+        ;;
+esac
+
+cfgfile=/etc/mysettings.conf
+cfgline=$(grep "^$1" $cfgfile ) 
+result=${cfgline#*=}
+
+echo -n $result
+exit 0

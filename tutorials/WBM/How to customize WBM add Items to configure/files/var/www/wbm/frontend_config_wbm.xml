@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configtool_config>
+  <frontend id="wbm" uid="MAIN">
+    <level id="information" uid="INFO_SWITCH">
+      <nav ressource="index.php" text="Information" user_level="0" fragment="information"/>
+    </level>
+    <level id="codesys" uid="CODESYS">
+      <nav ressource="index.php" text="PLC Runtime" user_level="0" fragment="rts_configuration"/>
+      <level id="rts_info" uid="CODESYS_CONFIG">
+        <nav ressource="index.php" text="Information" user_level="0" fragment="rts_info"/>
+      </level>
+      <level id="rts_configuration" uid="CODESYS_INFO">
+        <nav ressource="index.php" text="General Configuration" user_level="2" fragment="rts_configuration"/>
+      </level>
+      <level id="webvisu" uid="CODESYS_WEBVISU">
+        <nav ressource="index.php" text="WebVisu" user_level="0" fragment="webvisu"/>
+      </level>
+    </level>
+    <level id="tcpip" uid="TCPIP">
+      <nav ressource="index.php" text="Networking" user_level="2" fragment="tcpip_common_configuration"/>
+      <level id="tcpip_common_configuration" uid="COMMON_CONFIG_SWITCH">
+        <nav ressource="index.php" text="Host-/Domain Name" user_level="2" fragment="tcpip_common_configuration"/>
+      </level>
+      <level id="interfaces" uid="TCPIP_INTERFACES_SWITCH">
+        <nav ressource="index.php" text="TCP/IP" user_level="2" fragment="interfaces"/>
+      </level>
+      <level id="ethernet" uid="TCPIP_ETHERNET">
+        <nav ressource="index.php" text="Ethernet" user_level="2" fragment="ethernet"/>
+      </level>
+      <level id="routing" uid="TCPIP_ROUTING">
+        <nav ressource="index.php" text="Routing" user_level="2" fragment="routing"/>
+      </level>
+    </level>
+    <level id="firewall" uid="FIREWALL">
+      <nav ressource="index.php" text="Firewall" user_level="2" fragment="firewall_general_configuration"/>
+      <level id="firewall_general_configuration" uid="FIREWALL_GENERAL">
+        <nav ressource="index.php" text="General Configuration" user_level="2" fragment="firewall_general_configuration"/>
+      </level>
+      <level id="firewall_mac_address_filter" uid="FIREWALL_MAC_ADDRESS_FILTER">
+        <nav ressource="index.php" text="MAC Address Filter" user_level="2" fragment="firewall_mac_address_filter"/>
+      </level>
+      <level id="firewall_user_filter" uid="FIREWALL_USER_FILTER">
+        <nav ressource="index.php" text="User Filter" user_level="2" fragment="firewall_user_filter"/>
+      </level>
+    </level>
+    <level id="clock" uid="CLOCK">
+      <nav ressource="index.php" text="Clock" user_level="2" fragment="clock"/>
+    </level>
+    <level id="administration" uid="ADMIN">
+      <nav ressource="index.php" text="Administration" user_level="3" fragment="users"/>
+      <level id="users" uid="USERS">
+        <nav ressource="index.php" text="Users" user_level="3" fragment="users"/>
+      </level>
+      <level id="create_image" uid="CREATE_IMAGE">
+        <nav ressource="index.php" text="Create Image" user_level="3" fragment="create_image"/>
+      </level>
+      <level id="rs232" uid="ADMIN_RS232">
+        <nav ressource="index.php" text="Serial Interface" user_level="3" fragment="rs232"/>
+      </level>
+      <level id="service_interface" uid="ADMIN_SERVICE_INTERFACE">
+        <nav ressource="index.php" text="Service Interface" user_level="3" fragment="service_interface"/>
+      </level>
+      <level id="start_reboot" uid="START_REBOOT">
+        <nav ressource="index.php" text="Reboot" user_level="3" fragment="start_reboot"/>
+      </level>
+    </level>
+    <level id="package_server" uid="PKGSRV">
+      <nav ressource="index.php" text="Package Server" user_level="3" fragment="firmware_backup"/>
+      <level id="firmware_backup" uid="BACKUP">
+        <nav ressource="index.php" text="Firmware Backup" user_level="3" fragment="firmware_backup"/>
+      </level>
+      <level id="firmware_restore" uid="RESTORE">
+        <nav ressource="index.php" text="Firmware Restore" user_level="3" fragment="firmware_restore"/>
+      </level>
+      <level id="system_partition" uid="START_BACKUP_SYSTEM">
+        <nav ressource="index.php" text="System Partition" user_level="3" fragment="system_partition"/>
+      </level>
+    </level>
+    <level id="mass_storage" uid="MASSSTORAGE">
+      <nav ressource="index.php" text="Mass Storage" user_level="3" fragment="mass_storage"/>
+    </level>
+    <level id="software_uploads" uid="DL">
+      <nav ressource="index.php" text="Software Uploads" user_level="3" fragment="software_uploads"/>
+    </level>
+    <level id="port" uid="PORT">
+      <nav ressource="index.php" text="Ports and Services" user_level="2" fragment="network_services"/>
+      <level id="network_services" uid="SEVERAL_PORTS">
+        <nav ressource="index.php" text="Network Services" user_level="3" fragment="network_services"/>
+      </level>
+      <level id="ntp" uid="NTP">
+        <nav ressource="index.php" text="NTP Client" user_level="3" fragment="ntp"/>
+      </level>
+      <level id="codesys_ports" uid="CODESYS_PORTS">
+        <nav ressource="index.php" text="PLC Runtime Services" user_level="3" fragment="codesys_ports"/>
+      </level>
+      <level id="ssh" uid="SSH">
+        <nav ressource="index.php" text="SSH" user_level="3" fragment="ssh"/>
+      </level>
+      <level id="tftp" uid="TFTP">
+        <nav ressource="index.php" text="TFTP" user_level="3" fragment="tftp"/>
+      </level>
+      <level id="dhcpd" uid="DHCPD">
+        <nav ressource="index.php" text="DHCP" user_level="3" fragment="dhcpd"/>
+      </level>
+      <level id="dns_service" uid="DNS_SERVICE">
+        <nav ressource="index.php" text="DNS" user_level="2" fragment="dns_service"/>
+      </level>
+      <level id="modbus_services" uid="MODBUS_SERVICES">
+        <nav ressource="index.php" text="Modbus&amp;#174;" user_level="2" fragment="modbus_services"/>
+      </level>
+    </level>
+    <level id="snmp" uid="SNMP">
+      <nav ressource="index.php" text="SNMP" user_level="3" fragment="snmp_general"/>
+      <level id="snmp_general" uid="SNMP_GENERAL">
+        <nav ressource="index.php" text="General Configuration" user_level="3" fragment="snmp_general"/>
+      </level>
+      <level id="snmp_v1_v2c" uid="SNMP_V1_V2C">
+        <nav ressource="index.php" text="SNMP v1/v2c" user_level="3" fragment="snmp_v1_v2c"/>
+      </level>
+      <level id="snmp_v3" uid="SNMP_V3">
+        <nav ressource="index.php" text="SNMP v3" user_level="3" fragment="snmp_v3"/>
+      </level>
+    </level>
+    <level id="mysettings" uid="MYSETTINGS">
+      <nav ressource="index.php" text="My Settings" user_level="2" fragment="mysettings"/>
+    </level>
+    <level id="diagnostic" uid="DIAGNOSTIC">
+      <nav ressource="index.php" text="Diagnostic" user_level="0" fragment="diagnostic"/>
+    </level>
+    <level id="vpn" uid="VPN">
+      <nav ressource="index.php" text="OpenVPN / IPsec" user_level="3" fragment="vpn"/>
+    </level>
+    <level id="security" uid="SECURITY">
+      <nav ressource="index.php" text="Security" user_level="3" fragment="tls"/>
+      <level id="tls" uid="TLS">
+        <nav ressource="index.php" text="TLS" user_level="3" fragment="tls"/>
+      </level>
+      <level id="integrity" uid="INTEGRITY">
+        <nav ressource="index.php" text="Integrity" user_level="3" fragment="integrity"/>
+      </level>
+    </level>
+    <level id="legal_information" uid="LEGAL_INFORMATION">
+      <nav ressource="index.php" text="Legal Information" user_level="0" fragment="open_source_licenses"/>
+      <level id="open_source_licenses" uid="OPEN_SOURCE_LICENSES">
+        <nav ressource="index.php" text="Open Source Licenses" user_level="0" fragment="open_source_licenses"/>
+      </level>
+      <level id="wago_licenses" uid="WAGO_LICENSES">
+        <nav ressource="index.php" text="WAGO Licenses" user_level="0" fragment="wago_licenses"/>
+      </level>
+    </level>
+  </frontend>
+</configtool_config>
