@@ -2,6 +2,8 @@
 <a href="https://circleci.com/gh/ADeepTech/WAGO-PLC-Tutorials/tree/master"><img src="https://img.shields.io/circleci/project/github/ADeepTech/WAGO-PLC-Tutorials.svg?sanitize=true" alt="Build Status"></a>
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/be6f4a2167b448cba1cc8850eb03748f)](https://www.codacy.com/manual/ADeepTech/WAGO-PLC-Tutorials?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ADeepTech/WAGO-PLC-Tutorials&amp;utm_campaign=Badge_Grade)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/adeeptech)
+![Liberapay patrons](https://img.shields.io/liberapay/patrons/ADeepTech)
+![Beerpay](https://img.shields.io/beerpay/ADeepTech/WAGO-PLC-Tutorials)
 
 <p align="center">
     <a href="https://github.com/ADeepTech/WAGO-PLC-Tutorials" title="WAGO Tutorials">
