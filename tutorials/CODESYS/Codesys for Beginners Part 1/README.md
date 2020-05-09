@@ -197,7 +197,7 @@ aWString := "This is a WSTRING"
 | VAR_INST      | Only for methods of a function block   |
 | VAR_CONFIG    | I/O addresses                          |
 | VAR_ACCESS    | Direct access to hardware variables    |
-\* POU - Program Organization Unit
+> \* POU - Program Organization Unit
 
 ```txt
 VAR_TYPE
