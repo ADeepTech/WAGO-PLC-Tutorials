@@ -20,6 +20,8 @@ Table of Contents
   * [Date/Time Literals](#Date/Time-Literals)
   * [Character string Literals](#Character-string-Literal)
 * [Variables](#Variables)
+  * [Variables Syntax](#Variables-Syntax)
+  * [Example Variables](#Example-Variables)
 * [Array](#Array)
 * [Data Structure](#Data-Structure)
 
@@ -199,11 +201,32 @@ aWString := "This is a WSTRING"
 | VAR_ACCESS    | Direct access to hardware variables    |
 > \* POU - Program Organization Unit
 
+### Variables Syntax
+
 ```txt
 VAR_TYPE
   VAR NAME : ARRAY [lower..upper] OF DATATYPE;
   VAR NAME : ARRAY [lower1..upper1, lower2..upper2] OF DATATYPE;
 END_VAR_TYPE
+```
+
+### Example Variables
+
+```txt
+VAR
+  xJsonParseTrigger : BOOL := TRUE;
+END_VAR
+
+VAR_INPUT
+  udiSizeData : UDINT;
+  sPointer : STRING(255);
+END_VAR
+
+VAR_OUTPUT
+  xBusy : BOOL;
+  xError : BOOL;
+  sStatus : STRING;
+END_VAR
 ```
 
 ## Constants and Retain
@@ -266,18 +289,20 @@ TYPE MOTOR_SIGNAL:
 END_TYPE
 ```
 
-Example From Boolean to Other Data Types
-B := BOOL_TO_INT(TRUE); (* Result: 1 *)
-O := BOOL_TO_STRING(TRUE); (* Result: ’TRUE’ *)
-RI := BOOL_TO_TIME(TRUE); (* Result: T#1ms *)
-N := BOOL_TO_TOD(TRUE); (* Result: TOD#00:00:00.001 *)
-G := BOOL_TO_DATE(FALSE); (* Result: D#1970‐01‐01 *)
+## Data Type Conversion
 
-Example From Floating‐Point to Other Data Types
-J := REAL_TO_INT(7.5); (* Result: J = 8 *)
-A := REAL_TO_INT(7.4); (* Result: A = 7 *)
-C := REAL_TO_INT(−7.5); (* Result: C = −8 *)
-K := REAL_TO_STRING(35.27) (* Result: K = ‘35.27’ *)
+Example From Boolean to Other Data Types  
+B := BOOL_TO_INT(TRUE); (* Result: 1 *)  
+O := BOOL_TO_STRING(TRUE); (* Result: ’TRUE’ *)  
+RI := BOOL_TO_TIME(TRUE); (* Result: T#1ms *)  
+N := BOOL_TO_TOD(TRUE); (* Result: TOD#00:00:00.001 *)  
+G := BOOL_TO_DATE(FALSE); (* Result: D#1970‐01‐01 *)  
 
-B := TRUNC_INT(−23.6) (* Result: B = −23 *)
-B := REAL_TO_INT(−23.6) (* Result: B = −24 *)
+Example From Floating‐Point to Other Data Types  
+J := REAL_TO_INT(7.5); (* Result: J = 8 *)  
+A := REAL_TO_INT(7.4); (* Result: A = 7 *)  
+C := REAL_TO_INT(−7.5); (* Result: C = −8 *)  
+K := REAL_TO_STRING(35.27) (* Result: K = ‘35.27’ *)  
+
+B := TRUNC_INT(−23.6) (* Result: B = −23 *)  
+B := REAL_TO_INT(−23.6) (* Result: B = −24 *)  
