@@ -245,6 +245,8 @@ END_VAR
 
 ## Array
 
+### Array Syntax
+
 ```txt
 TYPE
   Tab_1dim : ARRAY [lower..upper] OF DATATYPE;
