@@ -28,6 +28,7 @@ More coming soon.
 ## e!COCKPIT / Codesys
 
 1. [Codesys for beginners - Part 1](./tutorials/CODESYS/Codesys%20for%20Beginners%20Part%201 "WAGO - Codesys for beginners - Part 1")
+2. [Codesys for beginners - Part 2](./tutorials/CODESYS/Codesys%20for%20Beginners%20Part%202 "WAGO - Codesys for beginners - Part 2")
 
 ## System
 
