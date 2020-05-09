@@ -3669,8 +3669,7 @@ var CreateDeviceparams = (function()
 	  }
         });
     })();
-	
-
+    
 	/*---------------------------------------------------------------------------
 	* MySettings
 	* ---------------------------------------------------------------------------
@@ -3679,51 +3678,15 @@ var CreateDeviceparams = (function()
 	{
 		deviceParams.Add(
 		{
-		  id                    : 'publish',
-		  exampleValue          : 'yes | no' ,
-		  configtoolReadParams  : 
-		  {
-			name      : 'get_mysettings_conf',
-			parameter : [ 'publish' ],
-			sudo	:  true
-		  }
-		});
-
-		deviceParams.Add(
-		{
-		  id                    : 'topic',
+		  id                    : 'mysettings',
 		  exampleValue          : '' ,
 		  configtoolReadParams  : 
 		  {
 			name      : 'get_mysettings_conf',
-			parameter : [ 'topic' ],
+			parameter : [ 'my_publish=$my_publish',
+				'my_topic=$my_topic',
+				'my_interval=$my_interval' ],
 			sudo	:  true
-		  }
-		});
-
-		deviceParams.Add(
-		{
-		  id                    : 'interval',
-		  exampleValue          : '' ,
-		  configtoolReadParams  : 
-		  {
-			name      : 'get_mysettings_conf',
-			parameter : [ 'interval' ],
-			sudo	:  true
-		  }
-		});
-
-		deviceParams.Add(
-		{
-		  id                    : 'config_decada',
-		  configtoolWriteParams :
-		  {
-			name          : 'config_decada',
-			parameter     : [ 'publish=$publish',
-				'topic=$topic',
-				'interval=$interval'
-			],
-			sudo          : true
 		  }
 		});
 	})();

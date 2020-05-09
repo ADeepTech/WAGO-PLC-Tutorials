@@ -31,21 +31,21 @@ function MySettingsContent(id)
 	
     mysettingsContent.paramView.Add(
     {
-      paramId         : 'publish',
-      outputElementId : mysettingsContent.id + '_content #publish',
+      paramId         : 'my_publish',
+      outputElementId : mysettingsContent.id + '_content #my_publish',
 	  outputFkt       : UpdateCheckBox
     });
     
     mysettingsContent.paramView.Add(
     {
-      paramId         : 'topic',
-      outputElementId : mysettingsContent.id + '_content #topic'
+      paramId         : 'my_topic',
+      outputElementId : mysettingsContent.id + '_content #my_topic'
     });
     
     mysettingsContent.paramView.Add(
     {
-      paramId         : 'interval',
-      outputElementId : mysettingsContent.id + '_content #interval'
+      paramId         : 'my_interval',
+      outputElementId : mysettingsContent.id + '_content #my_interval'
     });
         
   })();
@@ -108,13 +108,13 @@ MySettingsContent.prototype.ChangeMySettingsConf = function(formObj)
   
   // get script parameter from form data - given, but empty strings must be converted to "" to let the script
   // know, that this parameter value should be deleted. 
-  var mysettings_publish  = ($(formObj).find('[id=mysettings_publish]:checked').length) ? 'yes' : 'no';  
-  var mysettings_topic = $(formObj).find('input#mysettings_topic').val()  || "\"\"";
-  var mysettings_interval = $(formObj).find('input#mysettings_interval').val()  || "\"\"";
+  var mysettings_my_publish  = ($(formObj).find('[id=mysettings_my_publish]:checked').length) ? 'yes' : 'no';  
+  var mysettings_my_topic = $(formObj).find('input#mysettings_my_topic').val()  || "\"\"";
+  var mysettings_my_interval = $(formObj).find('input#mysettings_my_interval').val()  || "\"\"";
 
-  var newValueList  = { mysettings_publish: mysettings_publish,
-						mysettings_topic: mysettings_topic,
-						mysettings_interval: mysettings_interval };
+  var newValueList  = { mysettings_publish: mysettings_my_publish,
+						mysettings_topic: mysettings_my_topic,
+						mysettings_interval: mysettings_my_interval };
 						
   deviceParams.ChangeValue('config_mysettings', newValueList, function(status, errorText)
   {

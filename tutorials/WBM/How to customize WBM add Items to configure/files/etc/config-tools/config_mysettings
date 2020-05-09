@@ -44,13 +44,13 @@ fi
 #--------------------------------------------------------------------
 # Update config file /etc/mysettings.conf
 #--------------------------------------------------------------------
-PUBLISH=`GetParameterValue publish $*`
-TOPIC=`GetParameterValue topic $*`
-INTERVAL=`GetParameterValue interval $*`
+PUBLISH=`GetParameterValue my_publish $*`
+TOPIC=`GetParameterValue my_topic $*`
+INTERVAL=`GetParameterValue my_interval $*`
 if [ "$status" = "$SUCCESS" ]; then
 	
-	# update "publish"
-	sed -i "/^publish/cpublish=$PUBLISH" $CONF_FILE
+	# update "my_publish"
+	sed -i "/^my_publish/cmy_publish=$PUBLISH" $CONF_FILE
 	status=$?
 	if [ "$status" != "$SUCCESS" ]; then
 		status=$SHELL_ERROR
@@ -58,8 +58,8 @@ if [ "$status" = "$SUCCESS" ]; then
 		SetLastError "Error while writing mysettings config file"
 	fi
 	
-	# update "topic"
-	sed -i "/^topic/ctopic=$TOPIC" $CONF_FILE
+	# update "my_topic"
+	sed -i "/^my_topic/cmy_topic=$TOPIC" $CONF_FILE
 	status=$?
 	if [ "$status" != "$SUCCESS" ]; then
 		status=$SHELL_ERROR
@@ -67,8 +67,8 @@ if [ "$status" = "$SUCCESS" ]; then
 		SetLastError "Error while writing mysettings config file"
 	fi
 	
-	# update "interval"
-	sed -i "/^interval/cinterval=$INTERVAL" $CONF_FILE
+	# update "my_interval"
+	sed -i "/^my_interval/cmy_interval=$INTERVAL" $CONF_FILE
 	status=$?
 	if [ "$status" != "$SUCCESS" ]; then
 		status=$SHELL_ERROR

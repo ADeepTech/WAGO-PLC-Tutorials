@@ -15,7 +15,7 @@
     > Default WAGO PFC username "admin" and password "wago".
 
 2. Enable SSH.  
-![WAGO - Enable SSH](https://github.com/ADeepTech/WAGO-PFC-Tutorials/raw/master/assets/images/enable-ssh.png "Enable SSH")
+![WAGO - Enable SSH](./assets/images/enable-ssh.png "Enable SSH")
 
 ## Download the neccessary files from WAGO PFC using WinSCP
 
@@ -24,7 +24,7 @@
     b. Port number remain as "22".  
 
     > Default WAGO PFC username "root" and password "wago".  
-![WAGO - Login WinSCP](https://github.com/ADeepTech/WAGO-PFC-Tutorials/raw/master/assets/images/winscp-login.png "Login WinSCP")
+![WAGO - Login WinSCP](./assets/images/winscp-login.png "Login WinSCP")
 
 2. Download the respective files to your own folder.  
 
@@ -36,30 +36,30 @@
     # /etc/mysettings.conf
 
     # My settings
-    publish=no
-    topic="/wago"
-    interval=5
+    my_publish=no
+    my_topic="/wago"
+    my_interval=5
     ```
 
 2. Create get_mysettings_conf file for reading values.  
-    Download [get_mysettings_conf](https://github.com/ADeepTech/WAGO-PFC-Tutorials/blob/master/tutorials/WBM/How%20to%20customize%20WBM%20add%20Items%20to%20configure/files/etc/config-tools/get_mysettings_conf) and edit. This file is for WBM to read values in mysettings.conf.
+    Download [get_mysettings_conf](./tutorials/WBM/How%20to%20customize%20WBM%20add%20Items%20to%20configure/files/etc/config-tools/get_mysettings_conf) and edit. This file is for WBM to read values in mysettings.conf.
 
     > Line 21 to 29 - Edit line 23, 25, 27 for each variable values.
 
     ```bash
     # validate request params
     case $1 in
-        publish)
+        my_publish)
             ;;
-        topic)
+        my_topic)
             ;;
-        interval)
+        my_interval)
             ;;
         *)
     ```
 
 3. Create config_mysettings file for writing values.  
-    Download [config_mysettings](https://github.com/ADeepTech/WAGO-PFC-Tutorials/blob/master/tutorials/WBM/How%20to%20customize%20WBM%20add%20Items%20to%20configure/files/etc/config-tools/config_mysettings) and edit. This file is for WBM to write values to mysettings.conf.
+    Download [config_mysettings](./tutorials/WBM/How%20to%20customize%20WBM%20add%20Items%20to%20configure/files/etc/config-tools/config_mysettings) and edit. This file is for WBM to write values to mysettings.conf.
 
     > Line 18 - Change the file name to what you configured in previous step.
 
@@ -70,24 +70,24 @@
     > Line 47 to 49 - Edit the values to be configured.
 
     ```bash
-    PUBLISH=`GetParameterValue publish $*`
-    TOPIC=`GetParameterValue topic $*`
-    INTERVAL=`GetParameterValue interval $*`
+    PUBLISH=`GetParameterValue my_publish $*`
+    TOPIC=`GetParameterValue my_topic $*`
+    INTERVAL=`GetParameterValue my_interval $*`
     ```
 
     > Line 50 to 79 - Edit line 53, 62, 71 for each variable values. Take note there is "c" in second word.  
     >
-    > "/^publish/**c**publish=$PUBLISH"  
+    > "/^my_publish/**c**my_publish=$PUBLISH"  
     >
-    > "/^topic/**c**topic=$TOPIC"  
+    > "/^my_topic/**c**my_topic=$TOPIC"  
     >
-    > "/^interval/**c**interval=$INTERVAL"
+    > "/^my_interval/**c**my_interval=$INTERVAL"
 
     ```bash
     if [ "$status" = "$SUCCESS" ]; then
 
-        # update "publish"
-        sed -i "/^publish/cpublish=$PUBLISH" $CONF_FILE
+        # update "my_publish"
+        sed -i "/^my_publish/cmy_publish=$PUBLISH" $CONF_FILE
         status=$?
         if [ "$status" != "$SUCCESS" ]; then
             status=$SHELL_ERROR
@@ -95,8 +95,8 @@
             SetLastError "Error while writing mysettings config file"
         fi
 
-        # update "topic"
-        sed -i "/^topic/ctopic=$TOPIC" $CONF_FILE
+        # update "my_topic"
+        sed -i "/^my_topic/cmy_topic=$TOPIC" $CONF_FILE
         status=$?
         if [ "$status" != "$SUCCESS" ]; then
             status=$SHELL_ERROR
@@ -104,8 +104,8 @@
             SetLastError "Error while writing mysettings config file"
         fi
 
-        # update "interval"
-        sed -i "/^interval/cinterval=$INTERVAL" $CONF_FILE
+        # update "my_interval"
+        sed -i "/^my_interval/cmy_interval=$INTERVAL" $CONF_FILE
         status=$?
         if [ "$status" != "$SUCCESS" ]; then
             status=$SHELL_ERROR
@@ -127,9 +127,34 @@
 
 ## Edit the WBM JavaScript and PHP files
 
-1. Create [mysettings.js](https://github.com/ADeepTech/WAGO-PFC-Tutorials/blob/master/tutorials/WBM/How%20to%20customize%20WBM%20add%20Items%20to%20configure/files/var/www/wbm/js/mysettings.js) in ```/var/www/wbm/js```.  
+1. Create [mysettings.js](./tutorials/WBM/How%20to%20customize%20WBM%20add%20Items%20to%20configure/files/var/www/wbm/js/mysettings.js) in ```/var/www/wbm/js```.  
 
-2. Create [device_param_list.js.php](https://github.com/ADeepTech/WAGO-PFC-Tutorials/blob/master/tutorials/WBM/How%20to%20customize%20WBM%20add%20Items%20to%20configure/files/var/www/wbm/js/device_param_list.js.php) in ```/var/www/wbm/js```.  
+2. Create [device_param_list.js.php](./tutorials/WBM/How%20to%20customize%20WBM%20add%20Items%20to%20configure/files/var/www/wbm/js/device_param_list.js.php) in ```/var/www/wbm/js```.  
+
+    > Line 3673 to 3692.  
+
+    ```javascript
+    /*---------------------------------------------------------------------------
+    * MySettings
+    * ---------------------------------------------------------------------------
+    */
+    var CreateMySettingsParams = (function()
+    {
+        deviceParams.Add(
+        {
+            id                    : 'mysettings',
+            exampleValue          : '' ,
+            configtoolReadParams  :
+            {
+                name      : 'get_mysettings_conf',
+                parameter : [ 'my_publish=$my_publish',
+                    'my_topic=$my_topic',
+                    'my_interval=$my_interval' ],
+                sudo    :  true
+            }
+        });
+    })();
+    ```
 
 3. Edit the file index.php in ```/var/www/wbm/```.  
 

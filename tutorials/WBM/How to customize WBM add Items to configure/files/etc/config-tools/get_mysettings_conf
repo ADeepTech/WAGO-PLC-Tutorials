@@ -20,11 +20,11 @@ fi
 
 # validate request params
 case $1 in
-    publish)
+    my_publish)
         ;;
-    topic)
+    my_topic)
         ;;
-    interval)
+    my_interval)
         ;;
     *)
         #SetLastError "Illegal argument $1"
