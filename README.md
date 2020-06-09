@@ -3,7 +3,6 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/be6f4a2167b448cba1cc8850eb03748f)](https://www.codacy.com/manual/ADeepTech/WAGO-PLC-Tutorials?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ADeepTech/WAGO-PLC-Tutorials&amp;utm_campaign=Badge_Grade)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/adeeptech)
 [![Liberapay patrons](https://img.shields.io/liberapay/patrons/ADeepTech)](https://liberapay.com/ADeepTech/donate)
-[![Beerpay](https://img.shields.io/beerpay/ADeepTech/WAGO-PLC-Tutorials)](https://beerpay.io/ADeepTech/WAGO-PLC-Tutorials)
 
 <p align="center">
     <a href="https://github.com/ADeepTech/WAGO-PLC-Tutorials" title="WAGO PLC Tutorials">
@@ -57,8 +56,6 @@ More coming soon.
 ## Support our project
 
 Help us out!
-
-[![Beerpay](https://beerpay.io/ADeepTech/WAGO-PLC-Tutorials/badge.svg)](https://beerpay.io/ADeepTech/WAGO-PLC-Tutorials)
 
 <a href="https://www.buymeacoffee.com/C4xDR5K" target="_blank"><img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 
