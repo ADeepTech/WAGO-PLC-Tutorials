@@ -4,10 +4,12 @@ Table of Contents
 
 * [Comments](#Comments)
 * [Execution Priority](#Execution-Priority)
+* [Conditions](#Conditions)
+* [Program Flow](#Program-Flow)
 
 ## Comments
 
-* Multi-line (* *)
+* Multi-line (\* \*)
 
     ```txt
     (*

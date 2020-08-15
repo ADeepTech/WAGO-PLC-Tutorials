@@ -24,6 +24,7 @@ Table of Contents
   * [Example Variables](#Example-Variables)
 * [Array](#Array)
 * [Data Structure](#Data-Structure)
+* [Data Type Conversion](#Data-Type-Conversion)
 
 ## Introduction
 
@@ -129,8 +130,7 @@ CFC (Continuous Function Chart, graphical) is a sort of freehand FBD editor. Oth
 | -------------------- | -------------------- | -------------------- | -------------------- |
 | 0                    | 2#00000000           | 8#000                | 16#00                |
 | 38                   | 2#0010_0110‬          | 8#046                | 16#26                |
-| -17                  | -2#0001_0001 or      | −8#21 or             | -16#11               |
-|                      | 2#1110_1111          | 8#357                | 16#EF               ||
+| -17                  | -2#0001_0001 or<br/>2#1110_1111       | −8#21 or<br/>8#357             | -16#11 or<br/>16#EF              |
 
 ### Time Literals
 
