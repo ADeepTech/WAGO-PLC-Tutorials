@@ -56,3 +56,5 @@ improvements that enable use in our customers' applications - and thus also in y
 make it even more attractive and secure. Reported, potential security gaps are examined and evaluated
 and shut down, provided that a shutdown does not impair the general functionality of the product.
 
+We hope that these notes have given you the tips that are important for you in order to optimize the
+Ensure the use of WAGO products within your automation solution.
