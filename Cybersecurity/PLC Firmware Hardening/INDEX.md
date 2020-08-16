@@ -29,3 +29,14 @@ The vulnerabilities reported in the "WAGO / 2019-0095" audit were processed:
 | ------------ | ------------ | ------------------------------ |
 | TCP/22       | SSH          | System access                  |
 | TCP/443      | HTTPS        | Web-based management (WBM)     |
+
+#### Access configuration
+
+- WBM user/password
+  - admin  /  jc?2.+fYg%zK
+  - user  /  78§&ZEG#~Edj
+- Linux user/password
+  - root  /  w#8Gp)aw7@2M
+  - admin  /  6s@8!@u+QECS
+
+Note: The passwords for the WBM and Linux users must be changed!
