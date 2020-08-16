@@ -2,7 +2,7 @@
 
 https://www.wago.com/sg/download/public/sec_hin/Security_Hinweise_DE.pdf
 
-* This [INDEX.md](./INDEX.md "INDEX.md") is translated from German to English
+* This document is translated from German to English
 
 WAGO automation products are used in many Applications in a wide variety of industries and
 Areas of their use. When using devices with a fieldbus connection, it was always required
